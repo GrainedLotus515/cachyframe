@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-proton-proxy"
+version = "0.1.0"
+description = "Proton-side TLS capture tooling for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "cryptography>=44.0",
+  "httpx>=0.28",
+  "mitmproxy>=11.1",
+  "cachyframe-core",
+]
+
+[project.scripts]
+cachyframe-proton-proxy = "cachyframe_proton_proxy.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_proton_proxy"]
+
+[tool.uv.sources]
+cachyframe-core = { workspace = true }

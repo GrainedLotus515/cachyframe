@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-desktop"
+version = "0.1.0"
+description = "PySide6 desktop application for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "PySide6>=6.8",
+  "qasync>=0.27",
+  "cachyframe-collectors",
+  "cachyframe-core",
+  "cachyframe-data-sources",
+  "cachyframe-storage",
+  "cachyframe-ui",
+]
+
+[project.scripts]
+cachyframe-desktop = "cachyframe_desktop.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_desktop"]
+
+[tool.uv.sources]
+cachyframe-collectors = { workspace = true }
+cachyframe-core = { workspace = true }
+cachyframe-data-sources = { workspace = true }
+cachyframe-storage = { workspace = true }
+cachyframe-ui = { workspace = true }
+

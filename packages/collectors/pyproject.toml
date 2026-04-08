@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-collectors"
+version = "0.1.0"
+description = "Collection and reconciliation pipeline for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "mss>=10.0",
+  "opencv-python-headless>=4.11",
+  "python-xlib>=0.33",
+  "rapidocr-onnxruntime>=1.4",
+  "watchdog>=6.0",
+  "cachyframe-core",
+  "cachyframe-storage",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_collectors"]
+
+[tool.uv.sources]
+cachyframe-core = { workspace = true }
+cachyframe-storage = { workspace = true }
+

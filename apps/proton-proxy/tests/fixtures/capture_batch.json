@@ -1,0 +1,120 @@
+[
+  {
+    "message_type": "inventory_snapshot",
+    "game_build": "38.1.0",
+    "parser_version": "0.1.0",
+    "occurred_at": "2026-04-08T05:00:00Z",
+    "payload": {
+      "user_hash": "test-user",
+      "secret_token": "secret",
+      "username": "Lotus",
+      "mastery_rank": 18,
+      "items": [
+        {
+          "item_id": "forma_blueprint",
+          "name": "Forma Blueprint",
+          "quantity": 4,
+          "tradable": true
+        }
+      ],
+      "relics": [
+        {
+          "tier": 0,
+          "code": "A1",
+          "refinement": 0,
+          "quantity": 3
+        }
+      ],
+      "foundry_states": [
+        {
+          "item_id": "wisp_prime",
+          "name": "Wisp Prime",
+          "owned": true,
+          "mastered": false,
+          "ready_to_build": true
+        }
+      ]
+    }
+  },
+  {
+    "message_type": "relic_inventory",
+    "game_build": "38.1.0",
+    "parser_version": "0.1.0",
+    "occurred_at": "2026-04-08T05:00:01Z",
+    "payload": {
+      "relics": [
+        {
+          "tier": 1,
+          "code": "B2",
+          "refinement": 3,
+          "quantity": 5
+        }
+      ]
+    }
+  },
+  {
+    "message_type": "account_progress",
+    "game_build": "38.1.0",
+    "parser_version": "0.1.0",
+    "occurred_at": "2026-04-08T05:00:02Z",
+    "payload": {
+      "mastery_rank": 19,
+      "metadata": {
+        "xp_to_next_rank": 12000
+      }
+    }
+  },
+  {
+    "message_type": "trade_handshake",
+    "game_build": "38.1.0",
+    "parser_version": "0.1.0",
+    "occurred_at": "2026-04-08T05:00:03Z",
+    "payload": {
+      "trade": {
+        "user": "Trader",
+        "total_plat": 15,
+        "tx": [
+          {
+            "name": "Forma Blueprint",
+            "quantity": 1
+          }
+        ],
+        "rx": [
+          {
+            "name": "Platinum",
+            "quantity": 15
+          }
+        ]
+      }
+    }
+  },
+  {
+    "message_type": "market_relevant_item",
+    "game_build": "38.1.0",
+    "parser_version": "0.1.0",
+    "occurred_at": "2026-04-08T05:00:04Z",
+    "payload": {
+      "items": [
+        {
+          "item_id": "forma_blueprint",
+          "name": "Forma Blueprint",
+          "quantity": 4,
+          "tradable": true
+        }
+      ]
+    }
+  },
+  {
+    "message_type": "session_boundary",
+    "game_build": "38.1.0",
+    "parser_version": "0.1.0",
+    "occurred_at": "2026-04-08T05:00:05Z",
+    "payload": {
+      "phase": "start",
+      "metadata": {
+        "zone": "Orbiter"
+      }
+    }
+  }
+]
+

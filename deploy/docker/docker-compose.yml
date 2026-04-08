@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: python:3.12-slim
+    working_dir: /workspace
+    volumes:
+      - ../..:/workspace
+    command: >
+      sh -lc "pip install uv &&
+      uv sync --package cachyframe-backend &&
+      uv run --package cachyframe-backend python -m cachyframe_backend"
+    environment:
+      CACHYFRAME_BACKEND__HOST: 0.0.0.0
+      CACHYFRAME_DATABASE__BACKEND_URL: sqlite+aiosqlite:///./cachyframe-backend.db
+    ports:
+      - "8010:8010"
+

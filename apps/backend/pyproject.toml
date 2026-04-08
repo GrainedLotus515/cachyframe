@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-backend"
+version = "0.1.0"
+description = "FastAPI backend for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.34",
+  "cachyframe-collectors",
+  "cachyframe-core",
+  "cachyframe-data-sources",
+  "cachyframe-storage",
+]
+
+[project.scripts]
+cachyframe-backend = "cachyframe_backend.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_backend"]
+
+[tool.uv.sources]
+cachyframe-collectors = { workspace = true }
+cachyframe-core = { workspace = true }
+cachyframe-data-sources = { workspace = true }
+cachyframe-storage = { workspace = true }

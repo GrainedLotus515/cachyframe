@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-data-sources"
+version = "0.1.0"
+description = "Upstream data source clients for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "httpx>=0.28",
+  "orjson>=3.10",
+  "cachyframe-core",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_data_sources"]
+
+[tool.uv.sources]
+cachyframe-core = { workspace = true }
+

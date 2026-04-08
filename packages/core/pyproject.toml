@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-core"
+version = "0.1.0"
+description = "Shared types and settings for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.11",
+  "pydantic-settings>=2.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_core"]
+

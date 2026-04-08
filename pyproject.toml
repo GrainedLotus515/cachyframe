@@ -1,0 +1,53 @@
+[tool.uv.workspace]
+members = [
+  "apps/backend",
+  "apps/desktop",
+  "apps/proton-proxy",
+  "apps/worker",
+  "packages/core",
+  "packages/collectors",
+  "packages/data-sources",
+  "packages/storage",
+  "packages/ui",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "ruff>=0.11",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+asyncio_mode = "auto"
+pythonpath = [
+  "apps/backend/src",
+  "apps/desktop/src",
+  "apps/proton-proxy/src",
+  "apps/worker/src",
+  "packages/core/src",
+  "packages/collectors/src",
+  "packages/data-sources/src",
+  "packages/storage/src",
+  "packages/ui/src",
+]
+testpaths = [
+  "apps/backend/tests",
+  "apps/desktop/tests",
+  "apps/proton-proxy/tests",
+  "apps/worker/tests",
+  "packages/core/tests",
+  "packages/collectors/tests",
+  "packages/data-sources/tests",
+  "packages/storage/tests",
+  "packages/ui/tests",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "ASYNC", "RUF"]
+

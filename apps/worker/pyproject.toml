@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cachyframe-worker"
+version = "0.1.0"
+description = "Background jobs for CachyFrame"
+requires-python = ">=3.12"
+dependencies = [
+  "arq>=0.26",
+  "cachyframe-core",
+  "cachyframe-data-sources",
+  "cachyframe-storage",
+]
+
+[project.scripts]
+cachyframe-worker = "cachyframe_worker.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cachyframe_worker"]
+
+[tool.uv.sources]
+cachyframe-core = { workspace = true }
+cachyframe-data-sources = { workspace = true }
+cachyframe-storage = { workspace = true }
+
